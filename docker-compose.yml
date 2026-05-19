@@ -1,0 +1,12 @@
+services:
+  localstack:
+    container_name: localstack-azure
+    image: localstack/localstack-azure-alpha:latest
+    ports:
+      - "127.0.0.1:4566:4566"
+    environment:
+      - LOCALSTACK_AUTH_TOKEN="ls-KUbASocA-4334-PaZO-LAca-0949SaJEc123"
+      - DEBUG=${DEBUG:-0}
+    volumes:
+      - "./volume:/var/lib/localstack"
+      - "/var/run/docker.sock:/var/run/docker.sock"
